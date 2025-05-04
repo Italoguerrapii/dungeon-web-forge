@@ -1,42 +1,81 @@
+
+/* Reset some basic elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #121212;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #F97316;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FFD700;
+}
+
+/* Basic animations */
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Fix for react-router transitions */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: none;
+  margin: 0;
+  padding: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Add smooth transitions */
+a, button {
+  transition: all 0.3s ease;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Custom torch animation */
+@keyframes flicker {
+  0% { filter: brightness(100%); }
+  5% { filter: brightness(90%); }
+  10% { filter: brightness(110%); }
+  15% { filter: brightness(95%); }
+  20% { filter: brightness(105%); }
+  25% { filter: brightness(100%); }
+  30% { filter: brightness(95%); }
+  35% { filter: brightness(110%); }
+  40% { filter: brightness(100%); }
+  45% { filter: brightness(90%); }
+  50% { filter: brightness(105%); }
+  55% { filter: brightness(100%); }
+  60% { filter: brightness(95%); }
+  100% { filter: brightness(100%); }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.torch {
+  animation: flicker 3s infinite alternate;
 }

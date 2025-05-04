@@ -26,11 +26,13 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				geek: {
-					primary: '#6420AA',
-					secondary: '#32064A',
-					accent: '#8A2BE2',
-					light: '#B985FF',
-					dark: '#240134'
+					primary: '#F97316', // Bright orange from logo
+					secondary: '#B45309', // Darker orange
+					accent: '#FFD700', // Golden yellow from logo
+					light: '#FEF7CD', // Light yellow
+					dark: '#222222', // Dark gray/black from logo
+					stone: '#777777', // Stone color for dungeon aesthetics
+					flame: '#FF4500' // Flame color from logo torches
 				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
@@ -100,12 +102,20 @@ export default {
 				float: {
 					'0%, 100%': { transform: 'translateY(0)' },
 					'50%': { transform: 'translateY(-10px)' }
+				},
+				'flame-flicker': {
+					'0%, 100%': { transform: 'scale(1)', opacity: '1' },
+					'50%': { transform: 'scale(0.95)', opacity: '0.8' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'float': 'float 5s ease-in-out infinite'
+				'float': 'float 5s ease-in-out infinite',
+				'flame': 'flame-flicker 2s ease-in-out infinite'
+			},
+			backgroundImage: {
+				'dungeon-pattern': "url('/public/lovable-uploads/f6b34cea-d1e7-452d-9626-302ef851bf6a.png')"
 			}
 		}
 	},

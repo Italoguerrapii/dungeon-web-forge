@@ -1,108 +1,164 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Mail, Phone, MapPin, Facebook, Instagram, Twitter, Globe, Send } from 'lucide-react';
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 const Footer = () => {
   return (
-    <footer className="bg-geek-dark text-white">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="bg-gray-900 text-white">
+      <div className="container mx-auto px-4 pt-16 pb-8">
+        {/* Newsletter Section */}
+        <div className="w-full max-w-6xl mx-auto mb-16">
+          <div className="bg-geek-dark/60 backdrop-blur-sm p-8 rounded-xl border border-gray-700 shadow-lg flex flex-col md:flex-row gap-6 items-center">
+            <div className="flex-1">
+              <h3 className="text-xl font-bold mb-2">Receba Nossas Novidades</h3>
+              <p className="text-gray-300">Cadastre-se para receber ofertas exclusivas e novidades.</p>
+            </div>
+            <div className="flex-1">
+              <div className="flex gap-2">
+                <Input 
+                  placeholder="Seu email" 
+                  className="bg-gray-800 border-gray-700 text-white"
+                />
+                <Button className="bg-geek-primary hover:bg-geek-accent text-white">
+                  <Send className="h-4 w-4" />
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 border-b border-gray-800 pb-12">
           
           {/* Column 1 - About */}
           <div>
-            <h3 className="text-xl font-bold mb-4 font-heading">GeekDungeon</h3>
-            <p className="text-gray-300 mb-4">
+            <div className="flex items-center gap-2 mb-4">
+              <h3 className="text-xl font-bold font-heading">
+                <span className="text-geek-primary">Geek</span>
+                <span className="text-geek-accent">Dungeon</span>
+              </h3>
+            </div>
+            <p className="text-gray-400 mb-6">
               Seu portal para produtos geek, games, colecionáveis e muito mais. Navegue pelo nosso vasto catálogo de itens exclusivos.
             </p>
             <div className="flex space-x-4">
-              <a href="https://facebook.com" className="text-gray-300 hover:text-white">
+              <a href="https://facebook.com" className="bg-gray-800 p-2 rounded-full hover:bg-geek-primary transition-colors">
                 <span className="sr-only">Facebook</span>
-                <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
-                </svg>
+                <Facebook className="h-5 w-5" />
               </a>
-              <a href="https://instagram.com" className="text-gray-300 hover:text-white">
+              <a href="https://instagram.com" className="bg-gray-800 p-2 rounded-full hover:bg-geek-primary transition-colors">
                 <span className="sr-only">Instagram</span>
-                <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-                </svg>
+                <Instagram className="h-5 w-5" />
               </a>
-              <a href="https://twitter.com" className="text-gray-300 hover:text-white">
+              <a href="https://twitter.com" className="bg-gray-800 p-2 rounded-full hover:bg-geek-primary transition-colors">
                 <span className="sr-only">Twitter</span>
-                <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
-                </svg>
+                <Twitter className="h-5 w-5" />
+              </a>
+              <a href="https://geekdungeon.com.br" className="bg-gray-800 p-2 rounded-full hover:bg-geek-primary transition-colors">
+                <span className="sr-only">Website</span>
+                <Globe className="h-5 w-5" />
               </a>
             </div>
           </div>
           
           {/* Column 2 - Products */}
           <div>
-            <h3 className="text-xl font-bold mb-4 font-heading">Produtos</h3>
-            <ul className="space-y-2">
+            <h3 className="text-xl font-bold mb-6 font-heading">Produtos</h3>
+            <ul className="space-y-3">
               <li>
-                <Link to="/categoria/games" className="text-gray-300 hover:text-white transition-colors">Games</Link>
+                <Link to="/categoria/games" className="text-gray-400 hover:text-geek-accent transition-colors flex items-center">
+                  <span className="mr-2">►</span> Games
+                </Link>
               </li>
               <li>
-                <Link to="/categoria/action-figures" className="text-gray-300 hover:text-white transition-colors">Action Figures</Link>
+                <Link to="/categoria/action-figures" className="text-gray-400 hover:text-geek-accent transition-colors flex items-center">
+                  <span className="mr-2">►</span> Action Figures
+                </Link>
               </li>
               <li>
-                <Link to="/categoria/board-games" className="text-gray-300 hover:text-white transition-colors">Board Games</Link>
+                <Link to="/categoria/board-games" className="text-gray-400 hover:text-geek-accent transition-colors flex items-center">
+                  <span className="mr-2">►</span> Board Games
+                </Link>
               </li>
               <li>
-                <Link to="/categoria/camisetas" className="text-gray-300 hover:text-white transition-colors">Camisetas</Link>
+                <Link to="/categoria/camisetas" className="text-gray-400 hover:text-geek-accent transition-colors flex items-center">
+                  <span className="mr-2">►</span> Camisetas
+                </Link>
               </li>
               <li>
-                <Link to="/categoria/acessorios" className="text-gray-300 hover:text-white transition-colors">Acessórios</Link>
+                <Link to="/categoria/acessorios" className="text-gray-400 hover:text-geek-accent transition-colors flex items-center">
+                  <span className="mr-2">►</span> Acessórios
+                </Link>
               </li>
             </ul>
           </div>
           
           {/* Column 3 - Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4 font-heading">Informações</h3>
-            <ul className="space-y-2">
+            <h3 className="text-xl font-bold mb-6 font-heading">Informações</h3>
+            <ul className="space-y-3">
               <li>
-                <Link to="/sobre" className="text-gray-300 hover:text-white transition-colors">Sobre Nós</Link>
+                <Link to="/sobre" className="text-gray-400 hover:text-geek-accent transition-colors flex items-center">
+                  <span className="mr-2">►</span> Sobre Nós
+                </Link>
               </li>
               <li>
-                <Link to="/contato" className="text-gray-300 hover:text-white transition-colors">Contato</Link>
+                <Link to="/contato" className="text-gray-400 hover:text-geek-accent transition-colors flex items-center">
+                  <span className="mr-2">►</span> Contato
+                </Link>
               </li>
               <li>
-                <Link to="/perguntas-frequentes" className="text-gray-300 hover:text-white transition-colors">Perguntas Frequentes</Link>
+                <Link to="/perguntas-frequentes" className="text-gray-400 hover:text-geek-accent transition-colors flex items-center">
+                  <span className="mr-2">►</span> Perguntas Frequentes
+                </Link>
               </li>
               <li>
-                <Link to="/politica-de-privacidade" className="text-gray-300 hover:text-white transition-colors">Política de Privacidade</Link>
+                <Link to="/politica-de-privacidade" className="text-gray-400 hover:text-geek-accent transition-colors flex items-center">
+                  <span className="mr-2">►</span> Política de Privacidade
+                </Link>
               </li>
               <li>
-                <Link to="/termos-de-uso" className="text-gray-300 hover:text-white transition-colors">Termos de Uso</Link>
+                <Link to="/termos-de-uso" className="text-gray-400 hover:text-geek-accent transition-colors flex items-center">
+                  <span className="mr-2">►</span> Termos de Uso
+                </Link>
               </li>
             </ul>
           </div>
           
           {/* Column 4 - Contact */}
           <div>
-            <h3 className="text-xl font-bold mb-4 font-heading">Contato</h3>
-            <address className="not-italic text-gray-300">
-              <p className="mb-2">Rua dos Geeks, 42</p>
-              <p className="mb-2">São Paulo - SP</p>
-              <p className="mb-2">CEP: 01234-567</p>
-              <p className="mb-2">contato@geekdungeon.com.br</p>
-              <p>(11) 9999-9999</p>
+            <h3 className="text-xl font-bold mb-6 font-heading">Contato</h3>
+            <address className="not-italic text-gray-400 space-y-4">
+              <p className="flex items-center">
+                <MapPin className="h-5 w-5 mr-3 text-geek-primary" />
+                <span>Rua dos Geeks, 42<br/>São Paulo - SP<br/>CEP: 01234-567</span>
+              </p>
+              <p className="flex items-center">
+                <Mail className="h-5 w-5 mr-3 text-geek-primary" />
+                <span>contato@geekdungeon.com.br</span>
+              </p>
+              <p className="flex items-center">
+                <Phone className="h-5 w-5 mr-3 text-geek-primary" />
+                <span>(11) 9999-9999</span>
+              </p>
             </address>
           </div>
         </div>
         
-        <div className="mt-10 pt-8 border-t border-gray-700 text-center sm:flex sm:justify-between">
-          <p className="text-gray-300 text-sm">
+        <div className="mt-8 pt-8 border-t border-gray-800 text-center sm:flex sm:justify-between">
+          <p className="text-gray-400 text-sm">
             © 2025 GeekDungeon. Todos os direitos reservados.
           </p>
-          <div className="mt-4 sm:mt-0">
-            <img 
-              src="/placeholder.svg" 
-              alt="Formas de Pagamento" 
-              className="h-10 mx-auto sm:mx-0"
-            />
+          <div className="mt-4 sm:mt-0 flex items-center justify-center sm:justify-end">
+            <span className="text-xs text-gray-500 mr-2">Aceitamos:</span>
+            <div className="flex gap-2">
+              <div className="w-8 h-6 bg-gray-800 rounded"></div>
+              <div className="w-8 h-6 bg-gray-800 rounded"></div>
+              <div className="w-8 h-6 bg-gray-800 rounded"></div>
+              <div className="w-8 h-6 bg-gray-800 rounded"></div>
+            </div>
           </div>
         </div>
       </div>
