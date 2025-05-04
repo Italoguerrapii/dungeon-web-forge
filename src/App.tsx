@@ -15,6 +15,12 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import CartPage from "./pages/CartPage";
 import FAQPage from "./pages/FAQPage";
+import AdminPage from "./pages/AdminPage";
+import ProductsPage from "./pages/AdminPage/ProductsPage";
+import OrdersPage from "./pages/AdminPage/OrdersPage";
+import UsersPage from "./pages/AdminPage/UsersPage";
+import CouponsPage from "./pages/AdminPage/CouponsPage";
+import DashboardPage from "./pages/AdminPage/DashboardPage";
 
 const queryClient = new QueryClient();
 
@@ -36,7 +42,18 @@ const App = () => (
           <Route path="/login" element={<LoginPage />} />
           <Route path="/cadastro" element={<RegisterPage />} />
           <Route path="/carrinho" element={<CartPage />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+
+          {/* Rotas do Admin */}
+          <Route path="/admin" element={<AdminPage />}>
+            <Route index element={<DashboardPage />} />
+            <Route path="dashboard" element={<DashboardPage />} />
+            <Route path="produtos" element={<ProductsPage />} />
+            <Route path="pedidos" element={<OrdersPage />} />
+            <Route path="usuarios" element={<UsersPage />} />
+            <Route path="cupons" element={<CouponsPage />} />
+          </Route>
+
+          {/* Rota de fallback para páginas não encontradas */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
