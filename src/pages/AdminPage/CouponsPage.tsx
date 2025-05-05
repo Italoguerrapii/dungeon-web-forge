@@ -51,13 +51,16 @@ import { format, parseISO, addDays } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-// Mock de cupons
+// Define tipo como um tipo literal para resolver o erro
+type TipoCupom = "percentage" | "fixed";
+
+// Mock de cupons com o tipo corretamente tipado
 const mockCupons = [
   {
     id: "1",
     codigo: "BEMVINDO15",
     descricao: "15% de desconto para novos clientes",
-    tipo: "percentage",
+    tipo: "percentage" as TipoCupom,
     valor: 15,
     minimo: 0,
     maximo: null,
@@ -71,7 +74,7 @@ const mockCupons = [
     id: "2",
     codigo: "FRETE10",
     descricao: "R$ 10 de desconto em compras acima de R$ 100",
-    tipo: "fixed",
+    tipo: "fixed" as TipoCupom,
     valor: 10,
     minimo: 100,
     maximo: null,
@@ -85,7 +88,7 @@ const mockCupons = [
     id: "3",
     codigo: "GEEKWEEK30",
     descricao: "30% de desconto na semana geek (limite R$ 50)",
-    tipo: "percentage",
+    tipo: "percentage" as TipoCupom,
     valor: 30,
     minimo: 0,
     maximo: 50,
@@ -99,7 +102,7 @@ const mockCupons = [
     id: "4",
     codigo: "VOLTA20",
     descricao: "20% para clientes recorrentes",
-    tipo: "percentage",
+    tipo: "percentage" as TipoCupom,
     valor: 20,
     minimo: 150,
     maximo: null,
@@ -113,7 +116,7 @@ const mockCupons = [
     id: "5",
     codigo: "PROMO50",
     descricao: "R$ 50 de desconto em pedidos acima de R$ 200",
-    tipo: "fixed",
+    tipo: "fixed" as TipoCupom,
     valor: 50,
     minimo: 200,
     maximo: null,

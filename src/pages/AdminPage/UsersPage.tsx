@@ -35,8 +35,24 @@ import {
 import { format, parseISO } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 
-// Mock de usuários
-const mockUsuarios = [
+// Define TipoUsuario como um tipo literal para resolver o erro
+type TipoUsuario = "Cliente" | "Revendedor" | "Administrador";
+type StatusUsuario = "Ativo" | "Inativo";
+
+// Interface para os usuários com tipos corretos
+interface Usuario {
+  id: string;
+  nome: string;
+  email: string;
+  tipo: TipoUsuario;
+  cadastro: string;
+  pedidos: number;
+  gasto_total: number;
+  status: StatusUsuario;
+}
+
+// Mock de usuários com tipos corrigidos
+const mockUsuarios: Usuario[] = [
   {
     id: "user-1",
     nome: "Ana Silva",
@@ -108,18 +124,6 @@ const mockUsuarios = [
     status: "Inativo"
   }
 ];
-
-// Interface para os usuários
-interface Usuario {
-  id: string;
-  nome: string;
-  email: string;
-  tipo: "Cliente" | "Revendedor" | "Administrador";
-  cadastro: string;
-  pedidos: number;
-  gasto_total: number;
-  status: "Ativo" | "Inativo";
-}
 
 // Mock de pedidos por usuário
 const mockPedidosPorUsuario = {
